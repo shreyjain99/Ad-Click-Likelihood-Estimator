@@ -11,7 +11,7 @@
 <br>
 
 <p>
-<strong>Business Objective :</strong> If you are a taxi driver we want to predict how many cabs or pick-ups are possible in regions of new york city at a time. The end user or customer of this solution is taxi driver.
+<strong>Business Objective :</strong> To predict the probability of click and maximize profit of the ad while keeping the search results relevant for the product ad.
 </p>
 
 <br>
@@ -20,16 +20,15 @@
 <strong>Constraints :</strong>
 </p>
 <ol>
-<li>Latency (few seconds) </li>
-<li>Interpretability</li>
-<li>Relative Errors</li>
+<li>Latency (probably in milliseconds) </li>
+<li>Interpretability (just for sanity check)</li>
+<li>parallelizable training</li>
 </ol>
 
 <br>
 
 <p>
-<strong>Get the data from :</strong> http://www.nyc.gov/html/tlc/html/about/trip_record_data.shtml
-The data used in the attached datasets were collected and provided to the NYC Taxi and Limousine Commission (TLC) 
+<strong>Get the data from :</strong> https://www.kaggle.com/c/kddcup2012-track2
 </p>
 
 <br>
@@ -38,164 +37,92 @@ The data used in the attached datasets were collected and provided to the NYC Ta
 <strong>Data Collection :</strong>
 We Have collected all yellow taxi trips data of jan-2015 to mar-2015 and jan-2016 to mar-2016
 </p>
-<table>
+<table style="width:50%;text-align:center;">
+<caption style="text-align:center;">Data Files</caption>
 <tr>
-<th> file name </th>
-<th> file name size</th>
-<th> number of records </th>
-<th> number of features </th>
+<td><b>Filename</b></td><td><b>Available Format</b></td>
 </tr>
 <tr>
-<td> yellow_tripdata_2016-01 </td>
-<td> 1. 59G </td>
-<td> 10906858 </td>
-<td> 19 </td>
+<td>training</td><td>.txt (9.9Gb)</td>
 </tr>
 <tr>
-<td> yellow_tripdata_2016-02 </td>
-<td> 1. 66G </td>
-<td> 11382049 </td>
-<td> 19 </td>
+<td>queryid_tokensid</td><td>.txt (704Mb)</td>
 </tr>
 <tr>
-<td> yellow_tripdata_2016-03 </td>
-<td> 1. 78G </td>
-<td> 12210952 </td>
-<td> 19 </td>
+<td>purchasedkeywordid_tokensid</td><td>.txt (26Mb)</td>
 </tr>
 <tr>
-<td> yellow_tripdata_2015-01 </td>
-<td> 1.84Gb </td>
-<td> 12748986 </td>
-<td> 19 </td>
+<td>titleid_tokensid</td><td>.txt (172Mb)</td>
 </tr>
 <tr>
-<td> yellow_tripdata_2015-02 </td>
-<td> 1.81Gb </td>
-<td> 12450521 </td>
-<td> 19 </td>
+<td>descriptionid_tokensid</td><td>.txt (268Mb)</td>
 </tr>
 <tr>
-<td> yellow_tripdata_2015-03 </td>
-<td> 1.94Gb </td>
-<td> 13351609 </td>
-<td> 19 </td>
+<td>userid_profile</td><td>.txt (284Mb)</td>
 </tr>
 </table>
+
+
 
 <br>
 
 <p>
 <strong>Features in the dataset :</strong>
 </p>
-<table border="1">
-    <tr>
-        <th>Field Name</th>
-        <th>Description</th>
+<table style="width:100%">
+  <caption style="text-align:center;">training.txt</caption>
+  <tr>
+    <th>Feature</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>UserID</td>
+    <td>The unique id for each user</td>
     </tr>
-    <tr>
-        <td>VendorID</td>
-        <td>
-            A code indicating the TPEP provider that provided the record.
-            <ol>
-                <li>Creative Mobile Technologies</li>
-                <li>VeriFone Inc.</li>
-            </ol>
-        </td>
-    </tr>
-    <tr>
-        <td>tpep_pickup_datetime</td>
-        <td>The date and time when the meter was engaged.</td>
-    </tr>
-    <tr>
-        <td>tpep_dropoff_datetime</td>
-        <td>The date and time when the meter was disengaged.</td>
-    </tr>
-    <tr>
-        <td>Passenger_count</td>
-        <td>The number of passengers in the vehicle. This is a driver-entered value.</td>
-    </tr>
-    <tr>
-        <td>Trip_distance</td>
-        <td>The elapsed trip distance in miles reported by the taximeter.</td>
-    </tr>
-    <tr>
-        <td>Pickup_longitude</td>
-        <td>Longitude where the meter was engaged.</td>
-    </tr>
-    <tr>
-        <td>Pickup_latitude</td>
-        <td>Latitude where the meter was engaged.</td>
-    </tr>
-    <tr>
-        <td>RateCodeID</td>
-        <td>The final rate code in effect at the end of the trip.
-            <ol>
-                <li> Standard rate </li>
-                <li> JFK </li>
-                <li> Newark </li>
-                <li> Nassau or Westchester</li>
-                <li> Negotiated fare </li>
-                <li> Group ride</li>
-            </ol>
-        </td>
-    </tr>
-    <tr>
-        <td>Store_and_fwd_flag</td>
-        <td>This flag indicates whether the trip record was held in vehicle memory before sending to the vendor,<br> aka “store and forward,” because the vehicle did not have a connection to the server.
-            <br>Y= store and forward trip
-            <br>N= not a store and forward trip
-        </td>
-    </tr>
-    <tr>
-        <td>Dropoff_longitude</td>
-        <td>Longitude where the meter was disengaged.</td>
-    </tr>
-    <tr>
-        <td>Dropoff_latitude</td>
-        <td>Latitude where the meter was disengaged.</td>
-    </tr>
-    <tr>
-        <td>Payment_type</td>
-        <td>A numeric code signifying how the passenger paid for the trip.
-            <ol>
-                <li> Credit card </li>
-                <li> Cash </li>
-                <li> No charge </li>
-                <li> Dispute</li>
-                <li> Unknown </li>
-                <li> Voided trip</li>
-            </ol>
-        </td>
-    </tr>
-    <tr>
-        <td>Fare_amount</td>
-        <td>The time-and-distance fare calculated by the meter.</td>
-    </tr>
-    <tr>
-        <td>Extra</td>
-        <td>Miscellaneous extras and surcharges. Currently, this only includes. the $0.50 and $1 rush hour and overnight charges.</td>
-    </tr>
-    <tr>
-        <td>MTA_tax</td>
-        <td>0.50 MTA tax that is automatically triggered based on the metered rate in use.</td>
-    </tr>
-    <tr>
-        <td>Improvement_surcharge</td>
-        <td>0.30 improvement surcharge assessed trips at the flag drop. the improvement surcharge began being levied in 2015.</td>
-    </tr>
-    <tr>
-        <td>Tip_amount</td>
-        <td>Tip amount – This field is automatically populated for credit card tips.Cash tips are not included.</td>
-    </tr>
-    <tr>
-        <td>Tolls_amount</td>
-        <td>Total amount of all tolls paid in trip.</td>
-    </tr>
-    <tr>
-        <td>Total_amount</td>
-        <td>The total amount charged to passengers. Does not include cash tips.</td>
-    </tr>
+  <tr>
+    <td>AdID</td>
+    <td>The unique id for each ad</td>
+  </tr>
+  <tr>
+    <td>QueryID</td>
+    <td>The unique id for each Query (it is a primary key in Query table(queryid_tokensid.txt))</td>
+  </tr>
+  <tr>
+    <td>Depth</td>
+    <td>The number of ads impressed in a session is known as the 'depth'. </td>
+  </tr>
+  <tr>
+    <td>Position</td>
+    <td>The order of an ad in the impression list is known as the ‘position’ of that ad.</td>
+  </tr>
+  <tr>
+    <td>Impression</td>
+    <td>The number of search sessions in which the ad (AdID) was impressed by the user (UserID) who issued the query (Query).</td>
+  </tr>
+  <tr>
+    <td>Click</td>
+    <td>The number of times, among the above impressions, the user (UserID) clicked the ad (AdID).</td>
+  </tr>
+  <tr>
+    <td>TitleId</td>
+    <td>A property of ads. This is the key of 'titleid_tokensid.txt'. [An Ad, when impressed, would be displayed as a short text known as ’title’, followed by a slightly longer text known as the ’description’, and a URL (usually shortened to save screen space) known as ’display URL’.]</td>
+  </tr>
+  <tr>
+    <td>DescId</td>
+    <td>A property of ads.  This is the key of 'descriptionid_tokensid.txt'. [An Ad, when impressed, would be displayed as a short text known as ’title’, followed by a slightly longer text known as the ’description’, and a URL (usually shortened to save screen space) known as ’display URL’.]</td>
+  </tr>
+  <tr>
+    <td>AdURL</td>
+    <td>The URL is shown together with the title and description of an ad. It is usually the shortened landing page URL of the ad, but not always. In the data file,  this URL is hashed for anonymity.</td>
+  </tr>
+  <tr>
+    <td>KeyId</td>
+    <td>A property of ads. This is the key of  'purchasedkeyword_tokensid.txt'.</td>
+  </tr>
+  <tr>
+    <td>AdvId</td>
+    <td>a property of the ad. Some advertisers consistently optimize their ads, so the title and description of their ads are more attractive than those of others’ ads.</td>
+  </tr>
 </table>
 
 <br>
