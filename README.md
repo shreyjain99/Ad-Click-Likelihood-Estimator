@@ -130,7 +130,7 @@ We Have collected all yellow taxi trips data of jan-2015 to mar-2015 and jan-201
 <p>
 <strong>ML Problem Formulation :</strong>
 </p>
-<p><b><u> It is a regression problem as we predicting CTR = #clicks/#impressions</u></b></p>
+<p><b><u> It is a regression problem as we are predicting CTR = #clicks/#impressions</u></b></p>
 
 
 <br>
@@ -152,32 +152,33 @@ We Have collected all yellow taxi trips data of jan-2015 to mar-2015 and jan-201
 
   <h3>Summary</h3>
 
-  <h4>Data Processing</h4>
-    <p>The project begins with data cleaning and the removal of outliers through univariate analysis of key features. This step ensures that the data used for modeling is both accurate and relevant.</p>
+  <br>
 
-  <h4>Clustering and Region Division</h4>
-    <p>Following data cleaning, the city is divided into 40 regions based on clustering techniques that consider both distance and time intervals. This division allows for a more granular and accurate prediction of taxi demand across the city.</p>
+  <p>We have two python notebooks for this project in the first notebook that is Ad click prediction (EDA Notebook) we have done Exploratory Data Analysis (EDA). IN the second notebook that is Ad click Prediction (Modelling Notebook) we have done Data transformation for the modelling and the modelling for the problem</p>
 
-  <h4>Prediction Framework</h4>
-    <p>For each region, the data is broken down into 10-minute time intervals, and the number of pickups within each interval is predicted. The modeling process begins with baseline models, including moving averages, moving weighted averages, and exponential averages, which serve as simple predictors of demand.</p>
+  <br>
 
-   <h4>Advanced Modeling</h4>
-    <p>The project then advances to more sophisticated machine learning models, including linear regression, Random Forest regressor, and XGBoost regressor. These models are employed to enhance prediction accuracy by leveraging the complex relationships in the data.</p>
+  <h4>Exploratory Data Analysis (EDA)</h4>
+    <p>Initially, data is read and prepared, followed by univariate, bivariate, and multivariate analysis using Pandas to understand the features.</p>
 
-  <p>The final output of the project is a robust predictive model that can help taxi drivers optimize their routes and improve their earnings by forecasting the most promising areas for pickups in real-time.</p>
+  <h4>Data Transformation</h4>
+    <p>The data is then transformed to fit the regression problem.</p>
+
+  <h4>Modeling</h4>
+    <p>An XGBoost regressor is used to train the model, leveraging its capabilities to handle large datasets and complex patterns in the data effectively.</p>
 
 </body>
 
 <hr width="100%" size="2">
 <br>
 
-<p>
-<strong>Future Scope :</strong>
-</p>
-<ol>
-<li>Incorporate fourier transform features as features into regression models </li>
-<li>Perform hyperparameter tuning for regression models</li>
-<li>Try more regression models as well as artificial neural nets (ann)</li>
-</ol>
+<div align="center">
+  <img height="200" src="https://github.com/shreyjain99/Ad-Click-Likelihood-Estimator/blob/main/src%20files/AUC%20GRAPH.png"/>
+</div>
+
+<div align="center">
+  <img height="200" src="https://github.com/shreyjain99/Ad-Click-Likelihood-Estimator/blob/main/src%20files/FEATURE%20IMPORTANCE%20GRAPH.png"/>
+</div>
+
 
 <hr width="100%" size="2">
