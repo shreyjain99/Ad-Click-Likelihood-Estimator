@@ -173,6 +173,7 @@ We Have collected all yellow taxi trips data of jan-2015 to mar-2015 and jan-201
 <br>
 
 <h3 align= "left"> <strong> Conclusion </strong> </h3>
+<p>In conclusion we can see that the most important features for click trough rate are the title and position of the ad. We also get an area under curve of 0.68</p>
 <br>
 <h3>The ROC curve output graph</h3>
 <div align="center">
