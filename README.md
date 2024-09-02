@@ -172,10 +172,14 @@ We Have collected all yellow taxi trips data of jan-2015 to mar-2015 and jan-201
 <hr width="100%" size="2">
 <br>
 
+<h3 align= "left"> <strong> Conclusion </strong> </h3>
+<br>
+<h3>The ROC curve output graph</h3>
 <div align="center">
   <img height="200" src="https://github.com/shreyjain99/Ad-Click-Likelihood-Estimator/blob/main/src%20files/AUC%20GRAPH.png"/>
 </div>
 
+<h3>Most Important features</h3>
 <div align="center">
   <img height="200" src="https://github.com/shreyjain99/Ad-Click-Likelihood-Estimator/blob/main/src%20files/FEATURE%20IMPORTANCE%20GRAPH.png"/>
 </div>
