@@ -182,7 +182,7 @@ We Have collected all yellow taxi trips data of jan-2015 to mar-2015 and jan-201
 
 <h3>Most Important features</h3>
 <div align="center">
-  <img height="200" src="https://github.com/shreyjain99/Ad-Click-Likelihood-Estimator/blob/main/src%20files/image.png"/>
+  <img height="200" src="https://github.com/shreyjain99/Ad-Click-Likelihood-Estimator/blob/main/src%20files/Screenshot%202024-09-01%20220241.png"/>
 </div>
 
 
