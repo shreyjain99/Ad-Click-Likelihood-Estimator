@@ -181,7 +181,7 @@ We Have collected all yellow taxi trips data of jan-2015 to mar-2015 and jan-201
 
 <h3>Most Important features</h3>
 <div align="center">
-  <img height="200" src="https://github.com/shreyjain99/Ad-Click-Likelihood-Estimator/blob/main/src%20files/FEATURE%20IMPORTANCE%20GRAPH.png"/>
+  <img height="200" src="https://github.com/shreyjain99/Ad-Click-Likelihood-Estimator/blob/main/src%20files/image.png"/>
 </div>
 
 
