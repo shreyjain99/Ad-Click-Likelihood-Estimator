@@ -35,7 +35,7 @@
 
 <p>
 <strong>Data Collection :</strong>
-We Have collected all yellow taxi trips data of jan-2015 to mar-2015 and jan-2016 to mar-2016
+We Have the following data files
 </p>
 <table style="width:50%;text-align:center;">
 <caption style="text-align:center;">Data Files</caption>
