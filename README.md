@@ -187,3 +187,22 @@ We Have the following data files
 
 
 <hr width="100%" size="2">
+<br>
+
+<p>
+<strong>Skills and Software Tools Used in the Project :</strong>
+</p>
+<ul>
+    <li>Data Analysis</li>
+    <li>Machine Learning</li>
+    <li>Statistical Analysis</li>
+    <li>Exploratory Data Analysis (EDA)</li>
+    <li>Data Transformation</li>
+    <li>Regression</li>
+    <li>XGBoost</li>
+    <li>Python</li>
+    <li>Pandas</li>
+    <li>NumPy</li>
+</ul>
+
+<hr width="100%" size="2">
