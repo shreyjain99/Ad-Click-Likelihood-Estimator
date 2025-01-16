@@ -154,7 +154,7 @@ We Have the following data files
 
   <br>
 
-  <p>We have two python notebooks for this project in the first notebook that is Ad click prediction (EDA Notebook) we have done Exploratory Data Analysis (EDA). IN the second notebook that is Ad click Prediction (Modelling Notebook) we have done Data transformation for the modelling and the modelling for the problem</p>
+  <p>We have two python notebooks for this project in the first notebook that is Ad click prediction (EDA Notebook) we have done Exploratory Data Analysis (EDA). In the second notebook that is Ad click Prediction (Modelling Notebook) we have done Data transformation for the modelling and the modelling for the problem</p>
 
   <br>
 
